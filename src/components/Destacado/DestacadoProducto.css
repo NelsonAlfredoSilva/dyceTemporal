@@ -1,0 +1,80 @@
+.destacadosProd{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.destacadosProd .destacadosProdContainer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cardDestacada{
+    width: 220px;
+    min-height: 280px;
+    max-height: 280px;
+    margin: .5rem;
+}
+
+.cardDestacada .cardContainerImg{
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+}
+
+.cardDestacada .cardContainerImg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cardDestacada .cardContainerContent{
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+    padding: .5rem;
+}
+
+.cardDestacada .-categoria{
+    font-size: .7rem;
+    overflow: hidden;
+}
+
+
+.cardDestacada .-titulo{
+    font-size: 1rem;
+    font-weight: 600;
+    overflow: hidden;
+}
+
+.cardDestacada .-desc{
+    font-size: .8rem;
+    color: gray;
+    overflow: hidden;
+}
+
+
+.cardDestacada .-desc p{
+    overflow: hidden;
+}
+
+.cardDestacada .-prec{
+    font-size: 1rem;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.cardDestacada .cardContainer-stock{
+    width: auto;
+    top: 5px;
+    right: 5px;
+    left: auto;
+}
+
+.cardDestacada .hayStock,
+.cardDestacada .bajoStock,
+.cardDestacada .noStock{
+    font-size: .65rem;
+    padding: 3px 6px;
+}

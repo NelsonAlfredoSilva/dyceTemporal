@@ -1,0 +1,240 @@
+.dropdownContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    animation: slideInY .60s ease forwards;
+}
+
+
+.dropdownHeader {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tituloFiltros {
+    margin: 0;
+}
+
+.dropdownContainerCat {
+    width: 95%;
+    max-width: 1400px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1.5rem;
+    
+}
+
+.categoriaContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.categoriaPrincipal {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border-radius: 16px;
+    background-color: rgb(224, 98, 98);
+    cursor: pointer;
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.categoriaPrincipal:hover {
+    transform: scale(1.02);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, .12);
+}
+
+.categoriaTitulo {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .5rem;
+}
+
+.categoriaTitulo p {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.subcategoriasContainer {
+    width: 100%;
+    display: felx;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 16px;
+    animation: desplegar .3s ease forwards;
+}
+
+.subcategoriaItem {
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 12px;
+    background-color: rgb(214, 138, 37);
+    cursor: pointer;
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.subcategoriaItem:hover {
+    transform: translateY(-3px);
+}
+
+
+/*        ANIMACIONES         */
+
+
+@keyframes slideInY {
+
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes desplegar {
+
+    from {
+        opacity: 0;
+        transform: scaleY(0);
+        transform-origin: top;
+    }
+
+    to {
+        opacity: 1;
+        transform: scaleY(1);
+        transform-origin: top;
+    }
+
+}
+
+
+/* ========================= */
+/*          TABLET            */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+    .dropdownContainerCat {
+        width: 95%;
+
+        grid-template-columns: 1fr;
+
+        padding: 1rem;
+    }
+
+    .categoriaPrincipal {
+        height: 200px;
+    }
+
+    .subcategorias {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* ========================= */
+/*          CELULAR           */
+/* ========================= */
+
+@media (max-width: 480px) {
+
+    .dropdownContainer {
+        position: fixed;
+
+        top: 0;
+        left: -100%;
+
+        width: 85%;
+        height: 100vh;
+
+        overflow-y: auto;
+
+        background: white;
+
+        transition: left .35s ease;
+
+        z-index: 6001;
+
+        padding: 1rem;
+    }
+
+    .dropdownAbierto {
+        left: 0;
+    }
+
+    .dropdownHeader {
+        position: relative;
+
+        height: 60px;
+    }
+
+    .cerrarFiltros {
+        position: absolute;
+
+        right: 1rem;
+
+        font-size: 2rem;
+    }
+
+    .dropdownContainerCat {
+        width: 100%;
+
+        display: grid;
+        grid-template-columns: 1fr;
+
+        gap: 1rem;
+
+        padding: 1rem 0;
+    }
+
+    .categoriaPrincipal {
+        height: 180px;
+    }
+
+    .categoriaTitulo p {
+        font-size: 1rem;
+    }
+
+    .subcategorias {
+        grid-template-columns: 1fr;
+
+        padding: .8rem;
+    }
+
+    .subcategoriaItem {
+        min-height: 60px;
+    }
+
+}

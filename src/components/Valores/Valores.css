@@ -1,0 +1,30 @@
+.homeValores {
+    padding: 3rem 0;
+    text-align: center;
+    height: auto;
+    overflow: hidden;
+    background-image: url(../../assets/blobInicio.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.homeValores h2 {
+    font-size: 2rem;
+    color: var(--marron-cookie);
+    margin-bottom: 2rem;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+}
+.homeValoresGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    height: 450px;
+    overflow: hidden;
+    margin: .5rem;
+}

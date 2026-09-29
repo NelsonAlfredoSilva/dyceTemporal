@@ -1,0 +1,80 @@
+
+.contenedor__principal {
+    display: flex;
+    width: 100%;
+}
+
+.direccion_en_columna {
+    width: 50%;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+}
+
+.fuente_azul {
+    color: var(--primario);
+    font-size: 3.3rem;
+}
+
+
+.titular {
+    margin: 0 2rem;
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.size_50per {
+    width: 80%;
+}
+.contenedorPrin {
+    width: 50%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+    row-gap: 0.5rem;
+    align-content: center;
+}
+
+.descContainer {
+    margin: .5rem 2rem;
+    width: 100%;
+    font-size: 2.8;
+    color: grey;
+}
+
+.resaltado_verde {
+    color: #000000;
+    padding: 7px;
+    border-radius: 10px;
+    width: fit-content;
+    margin: 1rem;
+    background-color: var(--detalles);
+}
+
+/* Tarjetas */
+.justificado_con_espacios {
+    margin-top: 3rem;
+}
+
+.boton_opciones {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    margin: 0 2rem;
+}
+
+.prinPerso {
+    background-color: var(--primario);
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    color: var(--texto);
+    margin: 10px;
+    max-height: 34px;
+    overflow: hidden;
+}
+@media (max-width: 480px){
+
+}

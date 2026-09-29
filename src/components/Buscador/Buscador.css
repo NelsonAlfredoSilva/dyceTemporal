@@ -1,0 +1,38 @@
+.buscadorContainer{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:1rem 0;
+}
+
+.buscadorContainer .buscadorInputContainer{
+    width:80%;
+    display:flex;
+    align-items:center;
+    gap:.8rem;
+    padding:.8rem 1rem;
+
+    border:1px solid rgb(210,210,210);
+    border-radius:30px;
+
+    background-color:white;
+}
+
+.buscadorContainer .buscadorInputContainer .buscadorIcon{
+    font-size:1.3rem;
+    color:grey;
+}
+
+.buscadorContainer .buscadorInputContainer input{
+
+    width:100%;
+
+    border:none;
+    outline:none;
+
+    font-size:1rem;
+
+    background:transparent;
+
+}

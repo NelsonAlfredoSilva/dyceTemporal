@@ -1,0 +1,141 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    padding-bottom: 10px;
+
+    background-color: var(--cards);
+
+    border-radius: 18px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+    position: relative;
+    z-index: 10;
+
+    margin-bottom: .6rem;
+}
+
+header .headerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.headerContainerImg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: .5rem 1rem;
+}
+
+.imagen_logo {
+    width: 180px;
+}
+
+.menuHambur {
+    display: none;
+}
+
+.menuResponsive {
+    display: none;
+}
+
+
+
+/* RESPONSIVE */
+@media (max-width:480px) {
+    
+    header {
+        width: 180%;
+        padding-bottom: 0;
+        height: 80px;
+        display: flex;
+        gap: 5rem;
+    }
+
+    .menuHambur {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 30%;
+    }
+
+    .menuResponsive {
+        display: block;
+
+        font-size: 2.5rem;
+
+        color: #121212;
+
+        cursor: pointer;
+    }
+
+    .headerContainer {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .headerContainerImg {
+        width: 70%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .imagen_logo {
+        width: 130px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    header {
+        width: 180%;
+        padding-bottom: 0;
+        height: 80px;
+        display: flex;
+        gap: 5rem;
+    }
+
+    .menuHambur {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 30%;
+    }
+
+    .menuResponsive {
+        display: block;
+
+        font-size: 2.5rem;
+
+        color: #121212;
+
+        cursor: pointer;
+    }
+
+    .headerContainer {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .headerContainerImg {
+        width: 70%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .imagen_logo {
+        width: 130px;
+    }
+
+}

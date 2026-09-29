@@ -1,0 +1,38 @@
+.marcas {
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--cards);
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    align-items: center;
+    justify-content: center;
+}
+.marcas h3{
+    font-size: 2.5rem;
+}
+.marcasContainer {
+    display: flex;
+    gap: .5rem;
+    width: max-content;
+    animation: moverMarcas 20s linear infinite;
+    background-color: var(--cards);
+}
+.marcasContainer .logosMarcas{
+    height: 80px;      
+    width:auto;       
+    object-fit: contain;
+    opacity: .65;
+}
+
+@keyframes moverMarcas {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+
+}

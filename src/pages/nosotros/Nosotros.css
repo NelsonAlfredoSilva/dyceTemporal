@@ -1,0 +1,317 @@
+.nosotros {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.nosotros .nosotrosContainerTexto {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.nosotros .nosotrosContainerTexto .-texto {
+    height: auto;
+    padding: 3rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.nosotros .nosotrosContainerTexto .-texto p {
+    padding: .5rem;
+    height: 20%;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    text-align: justify;
+    overflow: hidden;
+    font-weight: 800;
+}
+
+.nosotros .nosotrosContainerImg {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+}
+
+.separadorSvg {
+    background-image: url("../../assets/nosotrosDesign.svg");
+    width: 100%;
+    height: 150px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.nosotros .nosotrosContainerImg .-titulo {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 3.5rem;
+    position: absolute;
+    bottom: 15rem;
+    color: white;
+}
+
+.nosotros .nosotrosContainerImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.nosotros .nosotrosContainerDestacados {
+    width: 100%;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: 1rem 0;
+}
+
+.nosotros .nosotrosContainerDestacados h5 {
+    font-size: 2rem;
+    color: var(--marron-cookie);
+    margin-bottom: 2rem;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+}
+
+.nosotros .nosotrosContainerDestacados .destacadosCardsContainer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 1rem;
+    background-color: #EE5625;
+}
+.nosotros .nosotrosContainerUbicacion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.nosotros .nosotrosContainerUbicacion h6{
+    font-size: 2rem;
+    color: var(--marron-cookie);
+    margin-bottom: 2rem;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+}
+.nosotros .nosotrosContainerUbicacion .ubiacaionContainer{
+    width: 100%;
+    display: flex;
+    padding: 6rem;
+}
+
+/* ---------- SEPARADOR ---------- */
+
+.separador {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 10px 0;
+    color: #EE5625;
+    overflow: hidden;
+    width: 100%;
+    height: 80px;
+}
+
+.separador::before,
+.separador::after {
+    content: "";
+    height: 1px;
+    flex: 1;
+    background: #EE5625;
+}
+
+
+/*TABLETS / CELULARES GRANDES */
+
+
+@media (max-width: 768px) {
+
+    .nosotros {
+        height: auto;
+        flex-direction: column;
+    }
+
+    /* ---------- TEXTO ---------- */
+
+    .nosotros .nosotrosContainerTexto {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        align-items: center;
+        justify-content: start;
+    }
+
+    .nosotros .nosotrosContainerTexto .-titulo {
+        width: 100%;
+        height: auto;
+        font-size: 1.5rem;
+    }
+
+    .nosotros .nosotrosContainerTexto .-texto {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 2rem;
+    }
+
+    .nosotros .nosotrosContainerTexto .-texto p {
+        width: 90%;
+        height: auto;
+        font-size: .9rem;
+    }
+
+    .nosotros .nosotrosContainerTexto .-texto .-textUl {
+        width: 90%;
+        height: auto;
+        padding: 25px 20px;
+        margin-top: 1rem;
+    }
+
+    .nosotros .nosotrosContainerTexto .-texto .-textUl .-textLi {
+        width: 100%;
+        height: auto;
+        margin-bottom: .8rem;
+        align-items: flex-start;
+    }
+
+    /* ---------- IMAGEN ---------- */
+
+    .nosotros .nosotrosContainerImg {
+        width: 100%;
+        height: 400px;
+    }
+
+    .nosotros .nosotrosContainerImg .-titulo {
+        font-size: 2.5rem;
+        bottom: 10rem;
+    }
+
+    /* ---------- DESTACADOS ---------- */
+
+    .nosotros .nosotrosContainerDestacados {
+        width: 100%;
+        height: auto;
+        min-height: 450px;
+        flex-direction: column;
+    }
+
+    .nosotros .nosotrosContainerDestacados .destacadosCardsContainer {
+        flex-wrap: wrap;
+        height: auto;
+        gap: 1rem;
+    }
+}
+
+/* CELULARES */
+
+
+@media (max-width: 480px) {
+
+    .nosotros {
+        height: auto;
+        flex-direction: column;
+    }
+
+    /* ---------- TEXTO ---------- */
+
+    .nosotros .nosotrosContainerTexto {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nosotros .nosotrosContainerTexto .-titulo {
+        width: 100%;
+        height: auto;
+        font-size: 1.2rem;
+    }
+
+    .nosotros .nosotrosContainerTexto .-texto {
+        width: 100%;
+        height: auto;
+        padding: 1.5rem;
+    }
+
+    .nosotros .nosotrosContainerTexto .-texto p {
+        width: 100%;
+        height: auto;
+        font-size: .9rem;
+        padding: .5rem 0;
+    }
+
+    .nosotros .nosotrosContainerTexto .-texto .-textUl {
+        width: 100%;
+        height: auto;
+        padding: 20px 10px;
+    }
+
+    .nosotros .nosotrosContainerTexto .-texto .-textUl .-textLi {
+        width: 100%;
+        height: auto;
+        margin-bottom: .8rem;
+    }
+
+    /* ---------- IMAGEN ---------- */
+
+    .nosotros .nosotrosContainerImg {
+        width: 100%;
+        height: 300px;
+    }
+
+    .nosotros .nosotrosContainerImg .-titulo {
+        font-size: 2rem;
+        bottom: 7rem;
+    }
+
+    /* ---------- DESTACADOS ---------- */
+
+    .nosotros .nosotrosContainerDestacados {
+        width: 100%;
+        height: auto;
+        min-height: 400px;
+        flex-direction: column;
+        margin: 1rem 0;
+    }
+
+    .nosotros .nosotrosContainerDestacados h5 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .nosotros .nosotrosContainerDestacados .destacadosCardsContainer {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        gap:  .5rem;
+    }
+}

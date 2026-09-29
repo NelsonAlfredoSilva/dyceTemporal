@@ -1,0 +1,105 @@
+
+.homeValorCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+    width: 25%;
+    height: 180px;
+    margin: .5rem;
+    padding: 2rem 1.5rem;
+    background: var(--cards);
+    border-radius: 16px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+.homeValorCard:hover {
+    transform: scale(1.03);
+
+    box-shadow: 0 18px 35px rgba(0, 0, 0, .18);
+}
+
+.homeValorCard:active {
+    transform: scale(1.03);
+
+    box-shadow: 0 18px 35px rgba(0, 0, 0, .18);
+}
+
+.valorIcon {
+    font-size: 2.5rem;
+    color: var(--primario);
+}
+
+.homeValorCard h3 {
+    font-size: 1.1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    color: #333;
+    overflow: hidden;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.homeValorCard p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    font-size: 0.9rem;
+    color: #888;
+    line-height: 1.5;
+    overflow: hidden;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@media (max-width:480px) {
+
+    /*--valores*/
+    .homeValores {
+        height: auto;
+        margin: 0;
+    }
+
+    .homeValoresGrid {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+        border: none;
+    }
+
+    .homeValorCard {
+        width: 80%;
+        margin: 0 .5rem;
+    }
+}
+/*-tablets celus grandes*/
+@media(max-width:768px) {
+    .homeValores {
+        height: auto;
+        margin: 0;
+    }
+
+    .homeValoresGrid {
+        align-items: center;
+        justify-content: center;
+        height: auto;
+        border: none;
+    }
+
+    .homeValorCard {
+        width: 60%;
+        margin: 0 .5rem;
+    }
+}
