@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useRef } from "react";
 import { CardProduct } from "../../components/CardProduct/CardProduct";
 import { FiltroCategorias } from "../../components/FiltroCategorias/FiltroCategorias";
 import { Buscador } from "../../components/Buscador/Buscador";
@@ -10,6 +10,7 @@ export const Catalogo = ({ }) => {
     const [busqueda, setBusqueda] = useState('');
     const [subFiltradas, setSubFiltradas] = useState([]);
     const [mostrarFiltros, setMostrarFiltros] = useState(false);
+    const productosRef = useRef(null);
 
 
     const productosFiltrados = productos
@@ -18,31 +19,43 @@ export const Catalogo = ({ }) => {
             subFiltradas.includes(p.subcategoria)
         )
         .filter(p => p.nombre.toLowerCase().includes(busqueda.toLowerCase()) || p.descripcion.toLowerCase().includes(busqueda.toLowerCase())
-        );  
+        );
+    //Despazamiento automatico 
+    const irAProductos = () => {
+        productosRef.current?.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    };
 
 
     return (
         <>
             <WspFloat></WspFloat>
-           <section className="catalogoFiltros">
-                <Buscador onBuscar={setBusqueda}></Buscador>
-            </section>
             <section className="catalogoCategorias">
                 <FiltroCategorias
-                        categorias={categorias}
-                        seleccionadas={subFiltradas}
-                        onFiltrar={setSubFiltradas}
-                        cerrarFiltro={() => setMostrarFiltros(false)}
-                        mostrar={mostrarFiltros}
-                    />
-
+                    categorias={categorias}
+                    seleccionadas={subFiltradas}
+                    onFiltrar={(subcategorias) => {
+                        setSubFiltradas(subcategorias);
+                        irAProductos();
+                    }}
+                    cerrarFiltro={() => setMostrarFiltros(false)}
+                    mostrar={mostrarFiltros}
+                />
             </section>
-            <section className="catalogoProd">
+            <section className="catalogoFiltros">
+                <Buscador onBuscar={(valor) => {
+                    setBusqueda(valor);
+                }}></Buscador>
+            </section>
+            <section className="catalogoProd" ref={productosRef} >
                 {
                     mostrarFiltros && (
                         <div
                             className="overlayFiltros"
                             onClick={() => setMostrarFiltros(false)}
+                            
                         ></div>
                     )
                 }
@@ -72,7 +85,7 @@ export const Catalogo = ({ }) => {
                         }
 
                     </div>
-                    <div className="categoriasProd">
+                    <div className="categoriasProd" >
                         {
                             productosFiltrados.map((producto) => {
                                 return (
