@@ -56,41 +56,9 @@
         justify-content: center;
     }
 
-    .catalogoProd .catalogoSidebar {
-        width: 100%;
-        align-items: center;
-        justify-content: end;
-    }
-
     .categoriasActivas {
         height: auto;
         flex-wrap: wrap;
-    }
-
-    .filtroResponsive {
-        display: flex;
-        margin: .2rem 2rem;
-        bottom: 1rem;
-        font-size: 1.4rem;
-        padding: .6rem;
-        border-radius: 25%;
-        background: rgb(255, 255, 255);
-        box-shadow: 0 5px 5px rgba(0, 0, 0, .25);
-        cursor: pointer;
-
-    }
-
-    .catalogoProd .catalogoSidebar.sidebarAbierto {
-
-        left: 0;
-
-    }
-
-    .overlayFiltros {
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, .45);
-        z-index: 6000;
     }
 
 }

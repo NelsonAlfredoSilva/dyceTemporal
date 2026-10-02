@@ -5,7 +5,6 @@ export const FiltroCategorias = ({
     categorias,
     seleccionadas,
     onFiltrar,
-    cerrarFiltro,
     mostrar
 }) => {
 

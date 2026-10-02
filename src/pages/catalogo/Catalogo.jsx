@@ -40,8 +40,6 @@ export const Catalogo = ({ }) => {
                         setSubFiltradas(subcategorias);
                         irAProductos();
                     }}
-                    cerrarFiltro={() => setMostrarFiltros(false)}
-                    mostrar={mostrarFiltros}
                 />
             </section>
             <section className="catalogoFiltros">

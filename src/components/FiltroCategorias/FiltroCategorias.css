@@ -26,17 +26,19 @@
 }
 
 .dropdownContainerCat {
-    width: 95%;
+    width: 90%;
     max-width: 1400px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    /*display: grid;
+    grid-template-columns: repeat(2, 1fr);*/
     gap: 1rem;
     padding: 1.5rem;
-    
+
 }
 
 .categoriaContainer {
-    width: 100%;
+    flex: 1 1 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -48,6 +50,7 @@
         transform .25s ease,
         box-shadow .25s ease;
 }
+
 .categoriaContainer:hover {
     transform: scale(1.02);
 
@@ -161,102 +164,34 @@
 }
 
 
-/* ========================= */
 /*          TABLET            */
-/* ========================= */
+
 
 @media (max-width: 768px) {
-
     .dropdownContainerCat {
-        width: 95%;
-
-        grid-template-columns: 1fr;
-
-        padding: 1rem;
+        display: flex;
+        flex-direction: column;
     }
 
-    .categoriaPrincipal {
-        height: 200px;
+    .categoriaContainer {
+        flex-basis: 100%;
     }
 
-    .subcategorias {
-        grid-template-columns: repeat(2, 1fr);
-    }
 
 }
 
 
-/* ========================= */
+
 /*          CELULAR           */
-/* ========================= */
 
 @media (max-width: 480px) {
-
-    .dropdownContainer {
-        position: fixed;
-
-        top: 0;
-        left: -100%;
-
-        width: 85%;
-        height: 100vh;
-
-        overflow-y: auto;
-
-        background: white;
-
-        transition: left .35s ease;
-
-        z-index: 6001;
-
-        padding: 1rem;
-    }
-
-    .dropdownAbierto {
-        left: 0;
-    }
-
-    .dropdownHeader {
-        position: relative;
-
-        height: 60px;
-    }
-
-    .cerrarFiltros {
-        position: absolute;
-
-        right: 1rem;
-
-        font-size: 2rem;
-    }
-
     .dropdownContainerCat {
-        width: 100%;
-
-        display: grid;
-        grid-template-columns: 1fr;
-
-        gap: 1rem;
-
-        padding: 1rem 0;
+        display: flex;
+        flex-direction: column;
     }
 
-    .categoriaPrincipal {
-        height: 180px;
-    }
-
-    .categoriaTitulo p {
-        font-size: 1rem;
-    }
-
-    .subcategorias {
-        grid-template-columns: 1fr;
-
-        padding: .8rem;
-    }
-
-    .subcategoriaItem {
-        min-height: 60px;
+    .categoriaContainer {
+        flex-basis: 100%;
     }
 
 }
