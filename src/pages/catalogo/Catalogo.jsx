@@ -27,74 +27,126 @@ export const Catalogo = ({ }) => {
             block: "start"
         });
     };
-
-
     return (
         <>
-            <WspFloat></WspFloat>
-            <section className="catalogoCategorias">
-                <FiltroCategorias
-                    categorias={categorias}
-                    seleccionadas={subFiltradas}
-                    onFiltrar={(subcategorias) => {
-                        setSubFiltradas(subcategorias);
-                        irAProductos();
-                    }}
-                />
-            </section>
-            <section className="catalogoFiltros">
-                <Buscador onBuscar={(valor) => {
-                    setBusqueda(valor);
-                }}></Buscador>
-            </section>
-            <section className="catalogoProd" ref={productosRef} >
-                {
-                    mostrarFiltros && (
-                        <div
-                            className="overlayFiltros"
-                            onClick={() => setMostrarFiltros(false)}
-                            
-                        ></div>
-                    )
-                }
-                <div className="catalogoProductosContainer">
-                    <div className="categoriasActivas">
+            <WspFloat />
 
-                        {
-                            subFiltradas.map(sub => (
+            {/*cuando no hay filtros*/}
+            {subFiltradas.length === 0 && (
+                <section className="catalogoCategorias">
+                    <FiltroCategorias
+                        categorias={categorias}
+                        seleccionadas={subFiltradas}
+                        onFiltrar={(subcategorias) => {
+                            setSubFiltradas(subcategorias)
+                            irAProductos()
+                        }}
+                    />
+                </section>
+            )}
 
-                                <div className="categoriaTag" key={sub}>
+            {/* lista de productos solo si hay filtros */}
+            {subFiltradas.length > 0 && (
+                <>
+                    <section className="catalogoFiltros">
+                        <Buscador onBuscar={(valor) => setBusqueda(valor)} />
+                    </section>
 
-                                    <span className="categoriaTagTitulo">{sub}</span>
+                    <section className="catalogoProd" >
+                        <div className="catalogoProductosContainer">
+                            {/* etiquetas activas */}
+                            <div className="categoriasActivas">
+                                {subFiltradas.map(sub => (
+                                    <div className="categoriaTag" key={sub}>
+                                        <span>{sub}</span>
+                                        <ion-icon
+                                            name="close-outline"
+                                            onClick={() => setSubFiltradas(subFiltradas.filter(c => c !== sub))}
+                                        />
+                                    </div>
+                                ))}
+                            </div>
 
-                                    <ion-icon
-                                        name="close-outline"
-                                        className="closeCategorias"
-                                        onClick={() =>
-                                            setSubFiltradas(
-                                                subFiltradas.filter(c => c !== sub)
-                                            )
-                                        }
-                                    ></ion-icon>
-
-                                </div>
-
-                            ))
-                        }
-
-                    </div>
-                    <div className="categoriasProd" >
-                        {
-                            productosFiltrados.map((producto) => {
-                                return (
-                                    <CardProduct key={producto.id}{...producto}></CardProduct>
-                                )
-                            })
-                        }
-                    </div>
-
-                </div>
-            </section>
+                            {/* productos */}
+                            <div className="categoriasProd">
+                                {productosFiltrados.map(producto => (
+                                    <CardProduct key={producto.id} {...producto} />
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+                </>
+            )}
         </>
     )
 }
+
+/*return (
+    <>
+        <WspFloat></WspFloat>
+        <section className="catalogoCategorias">
+            <FiltroCategorias
+                categorias={categorias}
+                seleccionadas={subFiltradas}
+                onFiltrar={(subcategorias) => {
+                    setSubFiltradas(subcategorias);
+                    irAProductos();
+                }}
+            />
+        </section>
+        <section className="catalogoFiltros">
+            <Buscador onBuscar={(valor) => {
+                setBusqueda(valor);
+            }}></Buscador>
+        </section>
+        <section className="catalogoProd" ref={productosRef} >
+            {
+                mostrarFiltros && (
+                    <div
+                        className="overlayFiltros"
+                        onClick={() => setMostrarFiltros(false)}
+                        
+                    ></div>
+                )
+            }
+            <div className="catalogoProductosContainer">
+                <div className="categoriasActivas">
+
+                    {
+                        subFiltradas.map(sub => (
+
+                            <div className="categoriaTag" key={sub}>
+
+                                <span className="categoriaTagTitulo">{sub}</span>
+
+                                <ion-icon
+                                    name="close-outline"
+                                    className="closeCategorias"
+                                    onClick={() =>
+                                        setSubFiltradas(
+                                            subFiltradas.filter(c => c !== sub)
+                                        )
+                                    }
+                                ></ion-icon>
+
+                            </div>
+
+                        ))
+                    }
+
+                </div>
+                <div className="categoriasProd" >
+                    {
+                        productosFiltrados.map((producto) => {
+                            return (
+                                <CardProduct key={producto.id}{...producto}></CardProduct>
+                            )
+                        })
+                    }
+                </div>
+
+            </div>
+        </section>
+    </>
+)
+}*/
