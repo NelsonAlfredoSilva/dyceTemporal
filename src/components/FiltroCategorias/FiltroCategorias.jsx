@@ -1,4 +1,54 @@
-import "./FiltroCategorias.css";
+
+import { useFiltroCategorias } from "./useFiltroCategoria.js";
+import { FiltroCategoriasCard } from "./FiltroCategoriasCard";
+import { FiltroCategoriasMenu } from "./FiltroCategoriasMenu";
+
+export const FiltroCategorias = ({
+    categorias,
+    seleccionadas,
+    onFiltrar,
+    variante = "cards"
+}) => {
+
+    const {
+        categoriaAbierta,
+        toggleCategoria,
+        toggleSubcategoria
+    } = useFiltroCategorias(seleccionadas, onFiltrar);
+
+    const propsFiltro = {
+        categorias,
+        seleccionadas,
+        categoriaAbierta,
+        toggleCategoria,
+        toggleSubcategoria
+    };
+
+    if (variante === "menu") {
+        return <FiltroCategoriasMenu {...propsFiltro} />;
+    }
+
+    return <FiltroCategoriasCard {...propsFiltro} />;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*import "./FiltroCategorias.css";
 import { useState } from "react";
 
 export const FiltroCategorias = ({
@@ -84,4 +134,4 @@ export const FiltroCategorias = ({
 
         </div>
     );
-};
+};*/
