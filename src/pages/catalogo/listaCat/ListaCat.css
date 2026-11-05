@@ -1,38 +1,55 @@
-.catalogoProd{
+.menuProd{
     display: flex;
     flex-wrap: wrap;
     gap: 0rem;
     margin: 0;
-    background-color: #F8F8F6;
 }
-.catalogoProd .catalogoSidebar{
+.menuProd .menuSidebar{
     display: flex;
     width: 20%;
-    border-right: 1px solid grey ;
+    border-right: 1px solid grey ;  
 }
-.catalogoProd .catalogoProductosContainer{
+.menuProd .menuProductosContainer{
     display: flex;
     flex-direction: column;
     width: 80%;
     height: auto;
     background-color: #F8F8F6;
 }
-.catalogoProd .catalogoProductosContainer .categoriasActivas{
+.menuProd .menuProductosContainer .menuProductosVistaContainer{
     display: flex;
     align-items: center;
+    justify-content: end;
+    height: 50px;
+    font-size: 1.5rem;
+}
+.menuProd .menuProductosContainer .menuProductosVistaContainer .iconVista{
+    padding: .5rem;
+    background-color: rgb(224, 125, 12);
+    border-radius: 50px;
+    transition: all 0.2s ease;
+}
+.menuProd .menuProductosContainer .menuProductosVistaContainer .iconVista:hover{
+    transform: translateY(-2px);
+}
+.menuProd .menuProductosContainer .menuCategoriasActivas{
+    display: flex;
+    align-items: center;
+    justify-content:  space-between;
     justify-content: end;
     gap: 1rem;
     height: 50px;
     overflow: hidden;
 }
-.catalogoProd .catalogoProductosContainer .categoriasProd{
+
+.menuProd .menuProductosContainer .menuCategoriasProd{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     height: auto;
 }
-.catalogoProd .catalogoProductosContainer .categoriasActivas .categoriaTag{
+.menuProd .menuProductosContainer .menuCategoriasActivas .menuCategoriaTag{
     background-color: rgb(127, 194, 127);
     display: flex;
     align-items: center;
@@ -42,26 +59,26 @@
     border-radius: 15px;
     border: 1px solid green;
 }
-.filtroResponsive{
+.menuFiltroResponsive{
     display: none;
 }
 @media (max-width:480px){
-    .catalogoProd{
+    .menuProd{
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
-    .catalogoProd .catalogoSidebar{
+    .menuProd .menuSidebar{
         width: 100%;
         align-items: center;
         justify-content: end;
     }
-    .categoriasActivas{
+    .menuCategoriasActivas{
         height: auto;
         flex-wrap: wrap;
     }
 
-    .filtroResponsive{
+    .menuFiltroResponsive{
         display:flex;
         margin: .2rem 2rem;
         bottom:1rem;
@@ -71,16 +88,16 @@
         background:rgb(255, 255, 255);
         box-shadow:0 5px 5px rgba(0,0,0,.25);
         cursor:pointer;
-        
+
     }
 
-    .catalogoProd .catalogoSidebar.sidebarAbierto{
+    .menuProd .menuSidebar.menuSidebarAbierto{
 
         left:0;
 
     }
 
-    .overlayFiltros{
+    .menuOverlayFiltros{
         position:fixed;
         inset:0;
         background:rgba(0,0,0,.45);

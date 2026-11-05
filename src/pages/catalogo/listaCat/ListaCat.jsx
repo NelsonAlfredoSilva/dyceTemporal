@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { CardProduct } from "../../../components/CardProduct/CardProduct";
+import { ListaProduct } from "../../../components/CardProduct/ListaProduct";
 import { FiltroCategorias } from "../../../components/FiltroCategorias/FiltroCategorias";
 import { Buscador } from "../../../components/Buscador/Buscador";
 import { WspFloat } from "../../../components/WspFloat/WspFloat";
@@ -16,6 +17,7 @@ export const ListaCat = ({ }) => {
         location.state?.subFiltradas || []
     );
     const [mostrarFiltros, setMostrarFiltros] = useState(false);
+    const [vista, setVista] = useState("list");
 
 
     const productosFiltrados = productos
@@ -29,7 +31,7 @@ export const ListaCat = ({ }) => {
 
 
 
-    return (
+   return (
         <>
             <WspFloat></WspFloat>
             <section className="catalogoFiltros">
@@ -45,7 +47,6 @@ export const ListaCat = ({ }) => {
                 )}
 
                 <aside className={`menuSidebar ${mostrarFiltros ? "menuSidebarAbierto" : ""}`}>
-
                     <ion-icon
                         name="options-outline"
                         className="menuFiltroResponsive"
@@ -57,17 +58,22 @@ export const ListaCat = ({ }) => {
                         onFiltrar={setSubFiltradas}
                         variante="menu"
                     />
-
                 </aside>
 
                 <div className="menuProductosContainer">
+                    
+                    <div className="menuProductosVistaContainer">
+                        <ion-icon 
+                            name={vista === "grid" ? "list-outline" : "grid-outline"}
+                            className="iconVista"
+                            onClick={() => setVista(vista === "grid" ? "list" : "grid")}
+                        ></ion-icon>
+                    </div>
 
                     <div className="menuCategoriasActivas">
-
                         {subFiltradas.map(sub => (
                             <div className="menuCategoriaTag" key={sub}>
                                 <span>{sub}</span>
-
                                 <ion-icon
                                     name="close-outline"
                                     onClick={() =>
@@ -78,27 +84,17 @@ export const ListaCat = ({ }) => {
                                 ></ion-icon>
                             </div>
                         ))}
-
                     </div>
 
-                    <div className="menuCategoriasProd">
-
-                        {productos
-                            .filter(p =>
-                                subFiltradas.length === 0 ||
-                                subFiltradas.includes(p.subcategoria)
+                    {/* NUEVO: Le pasamos la clase dinámica `grid` o `list` al contenedor */}
+                    <div className={`menuCategoriasProd ${vista}`}>
+                        {productosFiltrados.map(producto => (
+                            vista === "grid" ? (
+                                <CardProduct key={producto.id} {...producto} />
+                            ) : (
+                                <ListaProduct key={producto.id} {...producto} />
                             )
-                            .filter(p =>
-                                p.nombre.toLowerCase().includes(busqueda.toLowerCase()) ||
-                                p.descripcion.toLowerCase().includes(busqueda.toLowerCase())
-                            )
-                            .map(producto => (
-                                <CardProduct
-                                    key={producto.id}
-                                    {...producto}
-                                />
-                            ))}
-
+                        ))}
                     </div>
 
                 </div>
