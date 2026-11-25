@@ -17,9 +17,7 @@ export const FiltroCategoriasCard = ({
             </div>
 
             <div className="dropdownContainerCat">
-
                 {categorias.map((categoria) => (
-
                     <div
                         className="categoriaContainer"
                         key={categoria.nombre}
@@ -27,6 +25,13 @@ export const FiltroCategoriasCard = ({
                         <div
                             className="categoriaPrincipal"
                             onClick={() => toggleCategoria(categoria.nombre)}
+                            /**
+                             * Con esta simple linea usando elemento style de React si tiene valor imgCategoria la incluimos
+                             * imgCategoria se agrega en el context (productosContext)
+                             */
+                            style={
+                                categoria.imgCategoria ? {backgroundImage: `url(${categoria.imgCategoria})`} : {}
+                            }
                         >
                             <div className="categoriaTitulo">
                                 <p>{categoria.nombre}</p>

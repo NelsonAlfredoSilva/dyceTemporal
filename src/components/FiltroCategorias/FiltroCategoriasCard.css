@@ -64,8 +64,11 @@
     justify-content: center;
     padding: 1rem;
     border-radius: 16px;
-    /*background-color: #EE5625;*/
-    background-image: url("/public/circuitosIntegrados.jpg");
+    background-color: #EE5625;
+    /* Agregados para las imagenes de las card Categorias*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     cursor: pointer;
     transition:
         transform .25s ease,
@@ -85,6 +88,7 @@
     align-items: center;
     justify-content: center;
     gap: .5rem;
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 .categoriaTitulo p {
