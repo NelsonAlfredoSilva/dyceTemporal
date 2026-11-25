@@ -58,7 +58,7 @@ export const ProductosProvider = ({ children }) => {
 
             subcategorias: [producto.subcategoria],
 
-            imgCategoria :`./public/${producto.imgCategoria}`
+            imgCategoria :`./${producto.imgCategoria}`
 
         });
 
