@@ -42,6 +42,12 @@ export const ProductosProvider = ({ children }) => {
         c => c.nombre === producto.categoria
     );
 
+    let dirImagen = ''
+    if (import.meta.env.DEV) {
+        dirImagen = './public/'+producto.imgCategoria
+    } else {
+        dirImagen = './'+producto.imgCategoria
+    }
     if (existe) {
 
         if (!existe.subcategorias.includes(producto.subcategoria)) {
@@ -58,7 +64,7 @@ export const ProductosProvider = ({ children }) => {
 
             subcategorias: [producto.subcategoria],
 
-            imgCategoria :`./${producto.imgCategoria}`
+            imgCategoria :`${dirImagen}`
 
         });
 
